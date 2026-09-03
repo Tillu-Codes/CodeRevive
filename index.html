@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - College Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <span class="top-notice">🔔 Admissions Open for Academic Year 2026-27 | Apply before June 30</span>
+                <div class="top-contacts">
+                    <span>📞 +91 98765 43210</span>
+                    <span>✉️ info@campusconnect.edu</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-nav-wrapper">
+            <div class="container nav-container">
+                <div class="brand-logo">
+                    <div class="logo-icon">🎓</div>
+                    <div class="logo-text">
+                        <span class="logo-title">CampusConnect</span>
+                        <span class="logo-subtitle">College Portal</span>
+                    </div>
+                </div>
+
+                <nav class="navigation">
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#departments" class="nav-link">Departments</a></li>
+                        <li><a href="#courses" class="nav-link">Courses</a></li>
+                        <li><a href="#faculty" class="nav-link">Faculty</a></li>
+                        <li><a href="#events" class="nav-link">Events</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <div class="search-trigger-box">
+                        <input type="text" id="quickSearchInput" placeholder="Quick search..." autocomplete="off">
+                        <button id="quickSearchBtn" title="Search">🔍</button>
+                    </div>
+                    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Search Results Box -->
+        <div id="searchOverlay" class="search-overlay">
+            <div class="search-results-panel">
+                <div class="search-header">
+                    <h3>Search Results</h3>
+                    <button id="closeSearchBtn" class="close-btn">&times;</button>
+                </div>
+                <div id="searchResultsList" class="search-results-list">
+                    <p class="search-placeholder">Type a keyword and press search to view departments, courses, faculty, and events.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-tagline">Excellence in Education & Research</span>
+                    <h1 class="hero-title">Empowering Students. Building Futures.</h1>
+                    <p class="hero-description">
+                        Explore our programs, campus facilities, events and opportunities. Join a vibrant community dedicated to innovation, leadership, and holistic learning.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                        <a href="#facilities" class="btn btn-secondary">Campus Life</a>
+                    </div>
+                    <div class="hero-highlights">
+                        <div class="highlight-item">
+                            <span class="h-icon">🏆</span>
+                            <span>NAAC A++ Accredited</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="h-icon">💼</span>
+                            <span>95% Placement Record</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-card">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" alt="Campus Building" class="hero-img">
+                        <div class="hero-badge">
+                            <span class="badge-number">#1</span>
+                            <span class="badge-text">Top Ranked Technical Institute</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-badge">Know Our Legacy</span>
+                    <h2 class="section-title">About Our College</h2>
+                    <p class="section-subtitle">A heritage of academic distinction, research excellence, and community impact.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text-content">
+                        <h3>Fostering Innovation Since 1999</h3>
+                        <p>
+                            CampusConnect Institute has stood as a beacon of quality higher education for over two decades. Our institution is committed to providing a stimulating learning environment where students cultivate critical thinking, technical prowess, and moral leadership.
+                        </p>
+                        <p>
+                            With state-of-the-art laboratories, modern sports infrastructure, experienced faculty members, and strong industry partnerships, we prepare our scholars to thrive in dynamic global landscapes.
+                        </p>
+                        
+                        <div class="about-features">
+                            <div class="about-feat-item">
+                                <span class="feat-icon">🌐</span>
+                                <div>
+                                    <h4>Global Network</h4>
+                                    <p>Collaborations with 50+ universities worldwide</p>
+                                </div>
+                            </div>
+                            <div class="about-feat-item">
+                                <span class="feat-icon">🔬</span>
+                                <div>
+                                    <h4>Advanced Research</h4>
+                                    <p>Funded research labs & incubation facilities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-image-column">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80" alt="Students in Campus" class="about-img">
+                    </div>
+                </div>
+
+                <!-- Statistics Bar -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-icon">👨‍🎓</span>
+                        <h3 class="stat-value">5000+</h3>
+                        <p class="stat-label">Students</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">📚</span>
+                        <h3 class="stat-value">30+</h3>
+                        <p class="stat-label">Programs</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">👩‍🏫</span>
+                        <h3 class="stat-value">200+</h3>
+                        <p class="stat-label">Faculty</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">🏛️</span>
+                        <h3 class="stat-value">25+</h3>
+                        <p class="stat-label">Years</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Departments -->
+        <section id="departments" class="departments-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-badge">Fields of Study</span>
+                    <h2 class="section-title">Academic Departments</h2>
+                    <p class="section-subtitle">Explore our specialized departments driven by world-class curriculum and research.</p>
+                </div>
+
+                <div class="departments-grid">
+                    <div class="dept-card">
+                        <div class="dept-icon">💻</div>
+                        <h3 class="dept-name">Computer Science & Engineering</h3>
+                        <p class="dept-desc">Focusing on AI, software architecture, cloud computing, cybersecurity, and data science.</p>
+                        <button class="btn btn-outline view-dept-btn" data-dept-id="cse">View Details</button>
+                    </div>
+
+                    <div class="dept-card">
+                        <div class="dept-icon">📡</div>
+                        <h3 class="dept-name">Electronics & Communication</h3>
+                        <p class="dept-desc">Pioneering embedded systems, VLSI design, wireless communications, and signal processing.</p>
+                        <button class="btn btn-outline view-dept-btn" data-dept-id="ece">View Details</button>
+                    </div>
+
+                    <div class="dept-card">
+                        <div class="dept-icon">⚙️</div>
+                        <h3 class="dept-name">Mechanical Engineering</h3>
+                        <p class="dept-desc">Specializing in robotics, thermal engineering, CAD/CAM design, and smart manufacturing.</p>
+                        <button class="btn btn-outline view-dept-btn" data-dept-id="me">View Details</button>
+                    </div>
+
+                    <div class="dept-card">
+                        <div class="dept-icon">🏗️</div>
+                        <h3 class="dept-name">Civil Engineering</h3>
+                        <p class="dept-desc">Advancing structural engineering, sustainable urban planning, and environmental systems.</p>
+                        <button class="btn btn-outline view-dept-btn" data-dept-id="ce">View Details</button>
+                    </div>
+
+                    <div class="dept-card">
+                        <div class="dept-icon">⚡</div>
+                        <h3 class="dept-name">Electrical Engineering</h3>
+                        <p class="dept-desc">Delving into renewable energy grids, power electronics, control systems, and automation.</p>
+                        <button class="btn btn-outline view-dept-btn" data-dept-id="ee">View Details</button>
+                    </div>
+
+                    <div class="dept-card">
+                        <div class="dept-icon">📊</div>
+                        <h3 class="dept-name">Business Administration</h3>
+                        <p class="dept-desc">Developing leadership, corporate strategy, marketing, financial analytics, and entrepreneurship.</p>
+                        <button class="btn btn-outline view-dept-btn" data-dept-id="mba">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Offered / Courses -->
+        <section id="courses" class="courses-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-badge">Degree Pathways</span>
+                    <h2 class="section-title">Programs Offered</h2>
+                    <p class="section-subtitle">Comprehensive undergraduate and postgraduate programs crafted for industry readiness.</p>
+                </div>
+
+                <div class="filter-toolbar">
+                    <button class="filter-btn active" data-course-filter="all">All</button>
+                    <button class="filter-btn" data-course-filter="Undergraduate">Undergraduate</button>
+                    <button class="filter-btn" data-course-filter="Postgraduate">Postgraduate</button>
+                </div>
+
+                <div class="courses-grid" id="coursesContainer">
+                    <div class="course-card" data-level="Undergraduate">
+                        <div class="course-header">
+                            <span class="course-level-badge ug">Undergraduate</span>
+                            <span class="course-duration">⏱️ 4 Years</span>
+                        </div>
+                        <h3 class="course-name">B.Tech (Bachelor of Technology)</h3>
+                        <p class="course-desc">Four-year degree program offering specializations in CSE, ECE, Mechanical, Civil, and Electrical.</p>
+                        <div class="course-footer">
+                            <span class="course-intake">Seats: 360</span>
+                            <button class="btn btn-sm btn-outline course-modal-trigger" data-course="btech">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-level="Postgraduate">
+                        <div class="course-header">
+                            <span class="course-level-badge pg">Postgraduate</span>
+                            <span class="course-duration">⏱️ 2 Years</span>
+                        </div>
+                        <h3 class="course-name">M.Tech (Master of Technology)</h3>
+                        <p class="course-desc">Advanced master's degree focusing on specialized research, systems engineering, and thesis work.</p>
+                        <div class="course-footer">
+                            <span class="course-intake">Seats: 120</span>
+                            <button class="btn btn-sm btn-outline course-modal-trigger" data-course="mtech">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-level="Postgraduate">
+                        <div class="course-header">
+                            <span class="course-level-badge pg">Postgraduate</span>
+                            <span class="course-duration">⏱️ 2 Years</span>
+                        </div>
+                        <h3 class="course-name">MBA (Master of Business Administration)</h3>
+                        <p class="course-desc">Leadership-driven management curriculum with finance, marketing, human resources, and operations.</p>
+                        <div class="course-footer">
+                            <span class="course-intake">Seats: 180</span>
+                            <button class="btn btn-sm btn-outline course-modal-trigger" data-course="mba">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-level="Postgraduate">
+                        <div class="course-header">
+                            <span class="course-level-badge pg">Postgraduate</span>
+                            <span class="course-duration">⏱️ 2 Years</span>
+                        </div>
+                        <h3 class="course-name">MCA (Master of Computer Applications)</h3>
+                        <p class="course-desc">Professional master's program focusing on modern software engineering, cloud platforms, and full stack web.</p>
+                        <div class="course-footer">
+                            <span class="course-intake">Seats: 120</span>
+                            <button class="btn btn-sm btn-outline course-modal-trigger" data-course="mca">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-level="Undergraduate">
+                        <div class="course-header">
+                            <span class="course-level-badge ug">Undergraduate</span>
+                            <span class="course-duration">⏱️ 3 Years</span>
+                        </div>
+                        <h3 class="course-name">B.Sc (Computer Science / IT)</h3>
+                        <p class="course-desc">Foundational three-year science program building mathematics, computing principles, and programming skills.</p>
+                        <div class="course-footer">
+                            <span class="course-intake">Seats: 90</span>
+                            <button class="btn btn-sm btn-outline course-modal-trigger" data-course="bsc">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-level="Postgraduate">
+                        <div class="course-header">
+                            <span class="course-level-badge pg">Postgraduate</span>
+                            <span class="course-duration">⏱️ 2 Years</span>
+                        </div>
+                        <h3 class="course-name">M.Sc (Data Analytics)</h3>
+                        <p class="course-desc">Intensive postgraduate program analyzing big data, statistical modeling, machine learning, and visualization.</p>
+                        <div class="course-footer">
+                            <span class="course-intake">Seats: 60</span>
+                            <button class="btn btn-sm btn-outline course-modal-trigger" data-course="msc">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Section -->
+        <section id="faculty" class="faculty-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-badge">Academic Mentors</span>
+                    <h2 class="section-title">Distinguished Faculty</h2>
+                    <p class="section-subtitle">Learn from renowned researchers, innovators, and experienced academicians.</p>
+                </div>
+
+                <div class="faculty-search-bar">
+                    <input type="text" id="facultySearchInput" placeholder="Search faculty by name (e.g. Dr. Ananya Rao)...">
+                    <span class="faculty-search-icon">🔍</span>
+                </div>
+
+                <div class="faculty-grid" id="facultyGrid">
+                    <div class="faculty-card" data-name="Dr. Ananya Rao" data-dept="Computer Science & Engineering">
+                        <div class="faculty-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Dr. Ananya Rao" class="faculty-avatar">
+                        </div>
+                        <div class="faculty-info">
+                            <h3 class="faculty-name">Dr. Ananya Rao</h3>
+                            <span class="faculty-role">Professor & Head</span>
+                            <p class="faculty-dept">Computer Science & Engineering</p>
+                            <span class="faculty-tag">AI & Machine Learning</span>
+                        </div>
+                    </div>
+
+                    <div class="faculty-card" data-name="Dr. Rahul Mehta" data-dept="Electronics & Communication">
+                        <div class="faculty-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Dr. Rahul Mehta" class="faculty-avatar">
+                        </div>
+                        <div class="faculty-info">
+                            <h3 class="faculty-name">Dr. Rahul Mehta</h3>
+                            <span class="faculty-role">Associate Professor</span>
+                            <p class="faculty-dept">Electronics & Communication</p>
+                            <span class="faculty-tag">VLSI & Embedded Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="faculty-card" data-name="Dr. Priya Sharma" data-dept="Mechanical Engineering">
+                        <div class="faculty-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=400&q=80" alt="Dr. Priya Sharma" class="faculty-avatar">
+                        </div>
+                        <div class="faculty-info">
+                            <h3 class="faculty-name">Dr. Priya Sharma</h3>
+                            <span class="faculty-role">Assistant Professor</span>
+                            <p class="faculty-dept">Mechanical Engineering</p>
+                            <span class="faculty-tag">Robotics & CAD Design</span>
+                        </div>
+                    </div>
+
+                    <div class="faculty-card" data-name="Dr. Vikram Verma" data-dept="Civil Engineering">
+                        <div class="faculty-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Dr. Vikram Verma" class="faculty-avatar">
+                        </div>
+                        <div class="faculty-info">
+                            <h3 class="faculty-name">Dr. Vikram Verma</h3>
+                            <span class="faculty-role">Professor</span>
+                            <p class="faculty-dept">Civil Engineering</p>
+                            <span class="faculty-tag">Structural Resilience</span>
+                        </div>
+                    </div>
+
+                    <div class="faculty-card" data-name="Dr. Sneha Kulkarni" data-dept="Electrical Engineering">
+                        <div class="faculty-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80" alt="Dr. Sneha Kulkarni" class="faculty-avatar">
+                        </div>
+                        <div class="faculty-info">
+                            <h3 class="faculty-name">Dr. Sneha Kulkarni</h3>
+                            <span class="faculty-role">Associate Professor</span>
+                            <p class="faculty-dept">Electrical Engineering</p>
+                            <span class="faculty-tag">Smart Power Grids</span>
+                        </div>
+                    </div>
+
+                    <div class="faculty-card" data-name="Dr. Rajesh Nair" data-dept="Business Administration">
+                        <div class="faculty-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Dr. Rajesh Nair" class="faculty-avatar">
+                        </div>
+                        <div class="faculty-info">
+                            <h3 class="faculty-name">Dr. Rajesh Nair</h3>
+                            <span class="faculty-role">Professor</span>
+                            <p class="faculty-dept">Business Administration</p>
+                            <span class="faculty-tag">Strategic Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Facilities -->
+        <section id="facilities" class="facilities-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-badge">Life on Campus</span>
+                    <h2 class="section-title">Campus Facilities</h2>
+                    <p class="section-subtitle">World-class infrastructure designed to nurture academic pursuits and well-being.</p>
+                </div>
+
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80" alt="Central Library">
+                        </div>
+                        <div class="facility-body">
+                            <div class="facility-icon">📖</div>
+                            <h3 class="facility-name">Central Library</h3>
+                            <p class="facility-desc">Over 100,000 volumes, e-journal subscriptions, quiet reading zones, and 24/7 digital archives.</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Computer Labs">
+                        </div>
+                        <div class="facility-body">
+                            <div class="facility-icon">💻</div>
+                            <h3 class="facility-name">Computer Labs</h3>
+                            <p class="facility-desc">High-speed gigabit workstations equipped with GPU acceleration and licensed engineering software.</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Sports Complex">
+                        </div>
+                        <div class="facility-body">
+                            <div class="facility-icon">🏀</div>
+                            <h3 class="facility-name">Sports Complex</h3>
+                            <p class="facility-desc">Olympic-standard athletic track, indoor badminton courts, swimming pool, and gym.</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=600&q=80" alt="Hostel">
+                        </div>
+                        <div class="facility-body">
+                            <div class="facility-icon">🏢</div>
+                            <h3 class="facility-name">Hostel Accommodations</h3>
+                            <p class="facility-desc">Safe and comfortable separate hostels for boys and girls with high-speed Wi-Fi and dining halls.</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Cafeteria">
+                        </div>
+                        <div class="facility-body">
+                            <div class="facility-icon">☕</div>
+                            <h3 class="facility-name">Cafeteria</h3>
+                            <p class="facility-desc">Multi-cuisine dining offering hygienic, nutritious meals, quick snacks, and fresh beverages.</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Innovation Center">
+                        </div>
+                        <div class="facility-body">
+                            <div class="facility-icon">🚀</div>
+                            <h3 class="facility-name">Innovation Center</h3>
+                            <p class="facility-desc">Startup incubator providing 3D printing labs, prototyping gear, and mentoring for student entrepreneurs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section id="events" class="events-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-badge">Calendar</span>
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <p class="section-subtitle">Engage in hackathons, cultural festivals, sports tournaments, and symposiums.</p>
+                </div>
+
+                <div class="event-filter-toolbar">
+                    <button class="event-tab-btn active" data-category="All">All</button>
+                    <button class="event-tab-btn" data-category="Technical">Technical</button>
+                    <button class="event-tab-btn" data-category="Cultural">Cultural</button>
+                    <button class="event-tab-btn" data-category="Sports">Sports</button>
+                </div>
+
+                <div class="events-grid" id="eventsContainer">
+                    <div class="event-card" data-category="Technical">
+                        <div class="event-date-badge">
+                            <span class="event-month">OCT</span>
+                            <span class="event-day">15</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category-tag technical">Technical</span>
+                            <h3 class="event-title">Tech Symposium 2026</h3>
+                            <p class="event-meta">📍 Main Auditorium | ⏰ 09:30 AM</p>
+                            <p class="event-desc">Annual national technical symposium with keynote speakers from top tech firms and research paper presentations.</p>
+                            <button class="btn btn-sm btn-outline event-btn">View Event</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-category="Cultural">
+                        <div class="event-date-badge">
+                            <span class="event-month">NOV</span>
+                            <span class="event-day">04</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category-tag cultural">Cultural</span>
+                            <h3 class="event-title">Cultural Fest - Tarang</h3>
+                            <p class="event-meta">📍 Open Air Amphitheatre | ⏰ 05:00 PM</p>
+                            <p class="event-desc">Three days of music, dance, theatrical performances, art exhibitions, and celebrity artist nights.</p>
+                            <button class="btn btn-sm btn-outline event-btn">View Event</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-category="Sports">
+                        <div class="event-date-badge">
+                            <span class="event-month">NOV</span>
+                            <span class="event-day">20</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category-tag sports">Sports</span>
+                            <h3 class="event-title">Annual Sports Meet</h3>
+                            <p class="event-meta">📍 College Athletic Ground | ⏰ 08:00 AM</p>
+                            <p class="event-desc">Inter-departmental track and field events, football, basketball championships, and awards ceremony.</p>
+                            <button class="btn btn-sm btn-outline event-btn">View Event</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-category="Technical">
+                        <div class="event-date-badge">
+                            <span class="event-month">DEC</span>
+                            <span class="event-day">02</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category-tag technical">Technical</span>
+                            <h3 class="event-title">24-Hour Coding Challenge</h3>
+                            <p class="event-meta">📍 Turing Computing Center | ⏰ 10:00 AM</p>
+                            <p class="event-desc">Build real-world software solutions overnight, with cash prizes and direct recruitment opportunities.</p>
+                            <button class="btn btn-sm btn-outline event-btn">View Event</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-category="Technical">
+                        <div class="event-date-badge">
+                            <span class="event-month">DEC</span>
+                            <span class="event-day">18</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category-tag technical">Technical</span>
+                            <h3 class="event-title">Innovation Expo</h3>
+                            <p class="event-meta">📍 Exhibition Hall B | ⏰ 11:00 AM</p>
+                            <p class="event-desc">Showcase of cutting-edge student hardware and software prototypes to venture capitalists and industry leaders.</p>
+                            <button class="btn btn-sm btn-outline event-btn">View Event</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Announcements Section -->
+        <section id="announcements" class="announcements-section">
+            <div class="container">
+                <div class="announcements-container-box">
+                    <div class="announcements-header">
+                        <div>
+                            <span class="section-badge">Notice Board</span>
+                            <h2 class="section-title">Latest Announcements</h2>
+                        </div>
+                        <button id="viewAllAnnouncementsBtn" class="btn btn-primary">View All Announcements</button>
+                    </div>
+
+                    <div class="announcements-list" id="announcementsList">
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <span class="a-day">28</span>
+                                <span class="a-month">Aug</span>
+                            </div>
+                            <div class="announcement-info">
+                                <span class="a-tag exam">Academic</span>
+                                <h4 class="a-title">Mid-Semester Examination Schedule Released</h4>
+                                <p class="a-text">The official timetable for autumn semester examinations is now accessible on the student portal.</p>
+                            </div>
+                        </div>
+
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <span class="a-day">24</span>
+                                <span class="a-month">Aug</span>
+                            </div>
+                            <div class="announcement-info">
+                                <span class="a-tag scholarship">Scholarship</span>
+                                <h4 class="a-title">Merit Scholarship Applications Open</h4>
+                                <p class="a-text">Eligible students with GPA &gt; 8.5 can submit online scholarship requests before September 15.</p>
+                            </div>
+                        </div>
+
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <span class="a-day">20</span>
+                                <span class="a-month">Aug</span>
+                            </div>
+                            <div class="announcement-info">
+                                <span class="a-tag placement">Placement</span>
+                                <h4 class="a-title">Campus Placement Drive Registration Started</h4>
+                                <p class="a-text">Final year B.Tech and MCA candidates must register with the training and placement cell.</p>
+                            </div>
+                        </div>
+
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <span class="a-day">15</span>
+                                <span class="a-month">Aug</span>
+                            </div>
+                            <div class="announcement-info">
+                                <span class="a-tag cultural">Fest</span>
+                                <h4 class="a-title">Cultural Fest Coordinator Applications Invited</h4>
+                                <p class="a-text">Students interested in event management committees may submit nominations to student affairs.</p>
+                            </div>
+                        </div>
+
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <span class="a-day">10</span>
+                                <span class="a-month">Aug</span>
+                            </div>
+                            <div class="announcement-info">
+                                <span class="a-tag general">General</span>
+                                <h4 class="a-title">Central Library Extended Timings Notice</h4>
+                                <p class="a-text">Library reading rooms will now remain open until 11:00 PM on all weekdays during exam month.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-subtitle">Have questions or want to visit our campus? Reach out to our administrative team.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <h3>Campus Headquarters</h3>
+                        <p class="contact-lead">We welcome students, parents, and visitors to our campus.</p>
+
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>Address</strong>
+                                <p>CampusConnect Boulevard, Knowledge City, Bengaluru, Karnataka 560001</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>Phone Numbers</strong>
+                                <p>+91 98765 43210 / +91 80 2345 6789</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <div>
+                                <strong>Email Address</strong>
+                                <p>admissions@campusconnect.edu<br>info@campusconnect.edu</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-icon">⏰</span>
+                            <div>
+                                <strong>Office Hours</strong>
+                                <p>Monday – Saturday: 9:00 AM – 5:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" name="name" class="form-input" placeholder="Your full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="name@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactSubject">Subject *</label>
+                                <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="Subject of your inquiry">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" name="message" rows="4" class="form-input" placeholder="Write your message here..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
+                            <div id="contactFormFeedback" class="form-feedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Department Details -->
+    <div id="deptModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modalDeptName">Department Details</h3>
+                <button id="closeDeptModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="modalDeptBody">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-title">CampusConnect</span>
+                </div>
+                <p class="footer-desc">Empowering students to learn, innovate and grow. Dedicated to holistic educational excellence.</p>
+                <div class="footer-status">
+                    <span class="badge-status">Prototype v1.0</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#faculty">Faculty</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Academic Programs</h4>
+                <ul class="footer-links">
+                    <li><a href="#courses">B.Tech Engineering</a></li>
+                    <li><a href="#courses">M.Tech Specializations</a></li>
+                    <li><a href="#courses">Master of Business Admin</a></li>
+                    <li><a href="#courses">Master of Computer App</a></li>
+                    <li><a href="#courses">B.Sc & M.Sc Sciences</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Contact Details</h4>
+                <p class="footer-contact-item">📍 Knowledge City, Bengaluru</p>
+                <p class="footer-contact-item">📞 +91 98765 43210</p>
+                <p class="footer-contact-item">✉️ info@campusconnect.edu</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2026 CampusConnect College Portal. All rights reserved.</p>
+                <p class="challenge-tag">Made for Code &amp; Debug Challenge</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
