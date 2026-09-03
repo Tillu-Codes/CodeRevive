@@ -1,8 +1,33 @@
 /* ==========================================================
-   CampusConnect - College Portal Script
+   Matrusri Engineering College - College Portal Script
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
+
+    // 0. Page Opening Animation Sequence (Task 1)
+    (function initPageIntro() {
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var introTargets = [
+            { sel: '.site-header',           cls: 'intro-slide-down', delay: 0 },
+            { sel: '.brand-logo',            cls: 'intro-slide-up',   delay: 100 },
+            { sel: '.hero-tagline',          cls: 'intro-slide-up',   delay: 220 },
+            { sel: '.hero-title',            cls: 'intro-slide-up',   delay: 340 },
+            { sel: '.hero-description',      cls: 'intro-slide-up',   delay: 460 },
+            { sel: '.hero-buttons',          cls: 'intro-slide-up',   delay: 560 },
+            { sel: '.hero-highlights',       cls: 'intro-slide-up',   delay: 660 },
+            { sel: '.hero-visual',           cls: 'intro-scale',      delay: 300 }
+        ];
+        introTargets.forEach(function (t) {
+            var el = document.querySelector(t.sel);
+            if (!el) return;
+            el.classList.add('intro-item', t.cls);
+            if (prefersReducedMotion) {
+                el.classList.add('intro-visible');
+            } else {
+                setTimeout(function () { el.classList.add('intro-visible'); }, t.delay);
+            }
+        });
+    })();
 
     // 1. Mobile Menu Navigation
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -19,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const departmentData = {
         cse: {
             name: "Computer Science & Engineering",
-            head: "Dr. Ananya Rao",
+            head: "Dr. T. Raghunadha Reddy",
             facultyCount: "42 Faculty Members",
             labs: "AI & Robotics Lab, Cloud Computing Center, Network Security Lab",
             description: "The Department of Computer Science & Engineering offers cutting-edge curriculum spanning full-stack engineering, machine intelligence, distributed systems, and cybersecurity.",
@@ -27,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         ece: {
             name: "Electronics & Communication Engineering",
-            head: "Dr. Rahul Mehta",
+            head: "Dr. N. Shribala",
             facultyCount: "35 Faculty Members",
             labs: "VLSI Design Center, Embedded IoT Lab, Advanced Microwave Lab",
             description: "Pioneering research in chip architecture, cellular communication systems, DSP processors, and satellite telemetry.",
@@ -35,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         me: {
             name: "Mechanical Engineering",
-            head: "Dr. Priya Sharma",
+            head: "Dr. G. Amarender Rao",
             facultyCount: "28 Faculty Members",
             labs: "CNC & Manufacturing Lab, Thermal Dynamics Center, CAD/CAM Studio",
             description: "Focusing on rapid prototyping, fluid mechanics, mechatronics, and sustainable automotive engineering.",
@@ -43,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         ce: {
             name: "Civil Engineering",
-            head: "Dr. Vikram Verma",
+            head: "N/A",
             facultyCount: "24 Faculty Members",
             labs: "Geotechnical Testing Lab, Concrete Technology Lab, GIS Surveying Unit",
             description: "Developing resilient urban infrastructure, earthquake-resistant design, and ecological hydrology.",
@@ -51,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         ee: {
             name: "Electrical Engineering",
-            head: "Dr. Sneha Kulkarni",
+            head: "N/A",
             facultyCount: "22 Faculty Members",
             labs: "Power Electronics Lab, Renewable Energy Research Center, Control Systems Lab",
             description: "Advancing renewable energy grids, power electronics, control systems, and automation technologies for sustainable infrastructure.",
@@ -59,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         mba: {
             name: "Department of Management Studies",
-            head: "Dr. Rajesh Nair",
+            head: "N/A",
             facultyCount: "18 Faculty Members",
             labs: "Financial Trading Terminal, Business Analytics Suite, Management Simulation Room",
             description: "Cultivating leadership acumen, venture creation, strategic consultancy, and digital marketing expertise.",
@@ -299,9 +324,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { title: "MCA Computer Applications", type: "Course", link: "#courses" },
         { title: "B.Sc Computer Science", type: "Course", link: "#courses" },
         { title: "M.Sc Data Analytics", type: "Course", link: "#courses" },
-        { title: "Dr. Ananya Rao", type: "Faculty", link: "#faculty" },
-        { title: "Dr. Rahul Mehta", type: "Faculty", link: "#faculty" },
-        { title: "Dr. Priya Sharma", type: "Faculty", link: "#faculty" },
+        { title: "Dr. G. Amarender Rao", type: "Faculty", link: "#faculty" },
+        { title: "Dr. T. Raghunadha Reddy", type: "Faculty", link: "#faculty" },
+        { title: "Dr. J. Srinivas", type: "Faculty", link: "#faculty" },
         { title: "Central Library", type: "Facility", link: "#facilities" },
         { title: "Sports Complex", type: "Facility", link: "#facilities" },
         { title: "Tech Symposium 2026", type: "Event", link: "#events" },
@@ -409,10 +434,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 9. Scroll Reveal Animations (IntersectionObserver)
-    const revealElements = document.querySelectorAll(
+    var revealElements = document.querySelectorAll(
         '.section-title-wrap, .dept-card, .course-card, .faculty-card, .facility-card, .event-card, .announcement-item, .about-grid, .stats-grid, .contact-grid, .hero-content, .hero-visual, .highlight-item'
     );
-    revealElements.forEach(el => el.classList.add('reveal'));
+    revealElements.forEach(function (el) { el.classList.add('reveal'); });
+
+    // Task 2: Assign stagger delay classes to grid card children
+    var gridContainers = [
+        '.departments-grid',
+        '.courses-grid',
+        '.faculty-grid',
+        '.facilities-grid',
+        '.events-grid',
+        '.announcements-list'
+    ];
+    var delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3'];
+    gridContainers.forEach(function (gridSel) {
+        var grid = document.querySelector(gridSel);
+        if (!grid) return;
+        var children = grid.children;
+        for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            if (child.classList.contains('reveal')) {
+                child.classList.add(delayClasses[i % delayClasses.length]);
+            }
+        }
+    });
 
     if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver(function (entries) {
@@ -433,9 +480,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 10. 3D Tilt Effect on Cards (touch-safe)
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        const tiltCards = document.querySelectorAll('.dept-card, .course-card, .faculty-card');
+    // 10. 3D Tilt Effect on Cards (touch-safe) — Tasks 3 & 4
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var tiltCards = document.querySelectorAll('.dept-card, .course-card, .faculty-card, .facility-card, .event-card');
         tiltCards.forEach(function (card) {
             card.addEventListener('mousemove', function (e) {
                 var rect = card.getBoundingClientRect();
@@ -455,5 +503,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 11. Button ripple micro-interaction (CSS handles via ::after)
+
+    // Task 5: Scroll progress bar
+    var scrollProgress = document.getElementById('scrollProgress');
+    if (scrollProgress) {
+        var ticking = false;
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                requestAnimationFrame(function () {
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                    scrollProgress.style.width = scrollPercent + '%';
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
+
+    // Task 5: Hero animated gradient background
+    var heroSection = document.querySelector('.hero-section');
+    if (heroSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        heroSection.classList.add('animated-bg');
+    }
 
 });

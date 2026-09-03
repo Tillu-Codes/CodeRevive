@@ -1,5 +1,5 @@
 /* ==========================================================
-   CampusConnect - College Portal Stylesheet
+   Matrusri Engineering College - College Portal Stylesheet
    Premium 3D Redesign
    ========================================================== */
 
@@ -138,12 +138,15 @@ img {
 }
 
 .logo-icon {
-    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
     filter: drop-shadow(0 2px 4px rgba(26,86,219,0.2));
 }
 
 .logo-title {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--primary-color);
     display: block;
@@ -1719,7 +1722,7 @@ img {
 
 .footer-logo .logo-title {
     color: var(--white);
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .footer-desc {
@@ -2041,7 +2044,9 @@ img {
 @media (hover: hover) and (pointer: fine) {
     .dept-card,
     .course-card,
-    .faculty-card {
+    .faculty-card,
+    .facility-card,
+    .event-card {
         transform-style: preserve-3d;
         will-change: transform;
     }
@@ -2051,7 +2056,102 @@ img {
 @media (hover: none) {
     .dept-card:hover,
     .course-card:hover,
-    .faculty-card:hover {
+    .faculty-card:hover,
+    .facility-card:hover,
+    .event-card:hover {
         transform: translateY(-4px);
+    }
+}
+
+/* ==========================================================
+   14. OPENING ENTRANCE ANIMATION (Phase 3 — Task 1)
+   ========================================================== */
+.intro-item {
+    opacity: 0;
+    transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text column items: slide up from below */
+.intro-item.intro-slide-up {
+    transform: translateY(18px);
+}
+
+/* Hero image card: scale in */
+.intro-item.intro-scale {
+    transform: scale(0.92);
+}
+
+/* Header: slide down from above */
+.intro-item.intro-slide-down {
+    transform: translateY(-16px);
+}
+
+/* Revealed state — all converge here */
+.intro-item.intro-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ==========================================================
+   15. SCROLL PROGRESS BAR (Phase 3 — Task 5)
+   ========================================================== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--gradient-primary);
+    z-index: 10000;
+    transition: none;
+    pointer-events: none;
+}
+
+/* ==========================================================
+   16. HERO GRADIENT ANIMATION (Phase 3 — Task 5)
+   ========================================================== */
+.hero-section.animated-bg {
+    background-size: 200% 200%;
+    animation: heroGradientShift 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==========================================================
+   17. PREFERS-REDUCED-MOTION (Phase 3 — Task 4)
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .intro-item {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .scroll-progress {
+        display: none;
+    }
+
+    .hero-image-card {
+        transform: none !important;
+    }
+
+    .about-img {
+        transform: none !important;
     }
 }
